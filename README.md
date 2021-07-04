@@ -1,3 +1,13 @@
+# 2021-07-04
+Week1 homework
+
+
+
+
+
+
+
+
 # DuReader Dataset
 DuReader is a new large-scale real-world and human sourced MRC dataset in Chinese. DuReader focuses on real-world open-domain question answering. The advantages of DuReader over existing datasets are concluded as follows:
  - Real question

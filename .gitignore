@@ -1,0 +1,13 @@
+models/
+preprocessed/
+raw/
+*.pyc
+vocab.search
+local
+bleu_metric
+rouge_metric
+.idea/
+add_copyright.py
+copyright
+.DS_Store
+data/

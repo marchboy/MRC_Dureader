@@ -70,7 +70,7 @@ word2vec_sentence = word2vec.LineSentence(path+dureader_seg_res)
 
 # 简单训练
 model = word2vec.Word2Vec(word2vec_sentence, hs=1, min_count=1, window=3, vector_size=100)
-print(model.wv.similarity('微信', '好友'))
+print(model.wv.similarity('微信', '腾讯'))
 
 
 # 训练：
@@ -80,4 +80,4 @@ model2 = train_wordVectors(word2vec_sentence, vector_size=128, window=5, min_cou
 save_wordVectors(model2,word2vec_path)
 model2 = load_wordVectors(word2vec_path)
 
-print(model2.wv.similarity('微信', '好友'))
+print(model2.wv.similarity('微信', '腾讯'))

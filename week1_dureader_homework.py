@@ -75,9 +75,9 @@ print(model.wv.similarity('微信', '腾讯'))
 
 # 训练：
 word2vec_path = path + 'models/word2vec_model.model'
-model2 = train_wordVectors(word2vec_sentence, vector_size=128, window=5, min_count=5)
+model2 = train_wordVectors(word2vec_sentence, embedding_size=128, window=5, min_count=5)
 
-save_wordVectors(model2,word2vec_path)
+save_wordVectors(model2, word2vec_path)
 model2 = load_wordVectors(word2vec_path)
 
 print(model2.wv.similarity('微信', '腾讯'))

@@ -55,7 +55,7 @@ def train_wordVectors(sentences, embedding_size = 128, window = 5, min_count = 5
     :param min_count:Ignores all words with total frequency lower than this.
     :return: w2vModel
     '''
-    w2vModel = word2vec.Word2Vec(sentences, size=embedding_size, window=window, min_count=min_count,workers=multiprocessing.cpu_count())
+    w2vModel = word2vec.Word2Vec(sentences, vector_size=embedding_size, window=window, min_count=min_count,workers=multiprocessing.cpu_count())
     return w2vModel
 
 def save_wordVectors(w2vModel,word2vec_path):
@@ -69,13 +69,13 @@ def load_wordVectors(word2vec_path):
 word2vec_sentence = word2vec.LineSentence(path+dureader_seg_res)
 
 # 简单训练
-model = word2vec.Word2Vec(word2vec_sentence, hs=1, min_count=1, window=3,size=100)
+model = word2vec.Word2Vec(word2vec_sentence, hs=1, min_count=1, window=3, vector_size=100)
 print(model.wv.similarity('微信', '好友'))
 
 
 # 训练：
-word2vec_path = r'D:\oher\learn\kkb\6期名企班\项目三 大规模预训练模型的机器阅读理解\第一课 机器阅读理解发展及任务解析\word2Vec.model'
-model2 = train_wordVectors(word2vec_sentence, embedding_size=128, window=5, min_count=5)
+word2vec_path = path + 'models/word2vec_model.model'
+model2 = train_wordVectors(word2vec_sentence, vector_size=128, window=5, min_count=5)
 
 save_wordVectors(model2,word2vec_path)
 model2 = load_wordVectors(word2vec_path)

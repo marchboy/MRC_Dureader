@@ -1,7 +1,19 @@
 # 2021-07-04
 Week1 homework
 
+```
+git init
+git status
 
+git remote add origin https://github.com/marchboy/MRC_Dureader.git
+
+git add .
+git commit -m "mrc_week1"
+git branch -M main
+
+git push -u origin main
+
+```
 
 
 

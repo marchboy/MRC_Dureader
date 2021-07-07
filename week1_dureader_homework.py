@@ -92,14 +92,16 @@ if __name__ == "__main__":
     
     # 打印词频, 前100
     word_counts = mrc_dureader.words_count()
-    print(word_counts[:100])
+    print("Top200的词频：")
+    print(word_counts[:200])
+    print("\n")
 
     # 读取文本语料
     word2vec_sentence = word2vec.LineSentence(path+dureader_seg_res)
 
     # 简单训练
     model = word2vec.Word2Vec(word2vec_sentence, hs=1, min_count=1, window=3, vector_size=100)
-    print(model.wv.similarity('微信', '聊天记录'))
+    print("(微信)和(聊天记录)的词义相似度为：\n", model.wv.similarity('微信', '聊天记录'), '\n')
 
 
     # 训练：
@@ -110,4 +112,4 @@ if __name__ == "__main__":
     save_wordVectors(model2, word2vec_path)
     model2 = load_wordVectors(word2vec_path)
 
-    print(model2.wv.similarity('微信', '聊天记录'))
+    print("(微信)和(程序)的词义相似度为：\n", model2.wv.similarity('微信', '程序'), '\n')

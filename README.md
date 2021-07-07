@@ -19,6 +19,7 @@ git commit -m "mrc_week1"
 # 切换分支
 git branch -M main
 
+# 提交
 git push -u origin main
 
 ```
